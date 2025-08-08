@@ -1,6 +1,5 @@
-
 import "./globals.css";
-
+import Sidebar from "@/components/Sidebar";
 
 export const metadata = {
   title: "SanSuBagier",
@@ -9,20 +8,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-        <html lang="fr">
-      <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        
-        <meta name="tsurubaso" content="Imagier" />
-        <meta metadata/>
-      </head>
-      <body
-        className={`bg-gray-100 text-gray-900`}
-      >
-        {children}
+    <html lang="fr">
+      <body className="bg-gray-900 text-white">
+        <Sidebar />
+        <main className="ml-64 p-8">{children}</main>
       </body>
     </html>
   );
