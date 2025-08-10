@@ -28,7 +28,7 @@ const StoriesList = () => {
             LunaTech Library
           </h1>
           <p className="opacity-80 max-w-xl mx-auto">
-            Explore les histoires SF de ton univers.
+            Drafts of stories
           </p>
         </div>
 

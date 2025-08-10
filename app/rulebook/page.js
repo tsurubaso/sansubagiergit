@@ -1,68 +1,70 @@
+"use client";
+
 export default function RulePage() {
   return (
-    <div className="min-h-screen p-8 bg-[var(--background)] text-[var(--foreground)]">
+    <div
+      className="min-h-screen p-4"
+      style={{
+        backgroundColor: "var(--background)",
+        color: "var(--foreground)",
+      }}
+    >
       <div
-        className="max-w-3xl mx-auto rounded-2xl p-6"
+        className="p-8 rounded-lg shadow-md max-w-3xl mx-auto"
         style={{
-          backgroundColor: "var(--card-background)",
-          border: "1px solid var(--border-color)",
+          backgroundColor: "var(--background)",
+          color: "var(--foreground)",
+          border: "1px solid #444",
         }}
       >
-        <header className="mb-4">
-          <h1 className="text-3xl font-bold flex items-center gap-3">
-            <span aria-hidden>📖</span>
-            Rulebook — Naming & Organization
-          </h1>
-        </header>
+        <h1 className="text-3xl font-extrabold mb-4">
+          📖 Rulebook — Naming & Organization
+        </h1>
 
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-3">Naming Rules</h2>
-          <ol className="list-decimal list-inside space-y-4">
-            <li>
-              <strong>Series name first</strong> — The series title appears at
-              the beginning of the story title. After the series name comes the
-              story rank, expressed as a letter (A, B, C...) instead of a
-              number.
-            </li>
+        <h2 className="text-2xl font-bold mb-4">📝 Naming Rules</h2>
+        <ol className="list-decimal list-inside text-lg mb-6 space-y-2">
+          <li>
+            <strong>Series name first</strong> — The series title appears first,
+            followed by the story rank as a letter (A, B, C...) instead of a number.
+          </li>
+          <li>
+            <strong>Missing letters are allowed</strong> — Gaps in the alphabet
+            are intentional.
+          </li>
+          <li>
+            <strong>Shared universe</strong> — All stories take place in the same
+            fictional universe.
+          </li>
+          <li>
+            <strong>Loose relations</strong> — Connections between stories are
+            loose; recurring elements may appear without strict continuity.
+          </li>
+        </ol>
 
-            <li>
-              <strong>Missing letters are allowed</strong> — Some ranks may be
-              intentionally omitted (gaps in the alphabet are expected).
-            </li>
+        <hr className="my-8 border-gray-500" />
 
+        <h2 className="text-2xl font-bold mb-4">📂 Story Distributions</h2>
+        <ul className="list-disc list-inside text-lg mb-6 space-y-2">
+          <li>
+            <strong>Drafts 📝</strong> — Freshly added stories, mostly from
+            speech-to-text, with many spelling mistakes. This is mainly the
+            writer’s workspace.
+          </li>
+          <li>
+            <strong>Fragments ✂️</strong> — Incomplete pieces or excerpts, sometimes
+            staged here before moving to the <em>stories</em> section.
+          </li>
             <li>
-              <strong>Shared universe</strong> — All stories take place within
-              the same fictional universe, even when they feel independent.
-            </li>
-
-            <li>
-              <strong>Loose relations</strong> — Connections between stories are
-              loose: characters/locations/themes may reappear but continuity is
-              not strictly enforced.
-            </li>
-          </ol>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-3">Story Distributions</h2>
-          <ul className="list-disc list-inside space-y-3">
-            <li>
-              <strong>Drafts 📝</strong> — Freshly added stories without much
-              rewriting or rereading. Most are generated through speech-to-text
-              software, so orthographic mistakes and misspellings are frequent.
-              This section is primarily the writer’s workspace.
-            </li>
-            <li>
-              <strong>Fragments ✂️</strong> — Incomplete story pieces or
-              excerpts. Sometimes fragments are staged here before being moved
-              to the <em>story</em> section — the “read enough” corner.
-            </li>
-            <li>
-              <strong>Stories 📚</strong> —THe finsihed work, or what I want to
+              <strong>Stories 📚</strong> — The finsihed work, or what I want to
               be so.
             </li>
-          </ul>
-        </section>
+             <li>
+              <strong>Others 🗂️</strong> — Old texts. Because old stuffs are also cool to read.
+            </li>
+        </ul>
+
+        <hr className="my-8 border-gray-500" />
+
       </div>
     </div>
   );

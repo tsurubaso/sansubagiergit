@@ -10,7 +10,7 @@ const StoriesList = () => {
       try {
         const res = await fetch("/stories.json"); // <-- your public/books folder
         const data = await res.json();
-        setStories(data.filter((story) => story.status === "story"));
+        setStories(data.filter((story) => story.status === "other"));
       } catch (error) {
         console.error("Erreur lors du chargement des stories :", error);
       }
@@ -28,7 +28,7 @@ const StoriesList = () => {
             LunaTech Library
           </h1>
           <p className="opacity-80 max-w-xl mx-auto">
-            Stories 
+            Others past works
           </p>
         </div>
 

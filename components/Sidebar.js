@@ -8,6 +8,7 @@ const navItems = [
   { href: "/storylist", label: "📚 Storylist" },
   { href: "/draftlist", label: "📝 Draftlist" },
   { href: "/fragmentlist", label: "✂️ Fragmentlist" },
+  { href: "/otherlist", label: "🗂️ Otherlist" },
   { href: "/rulebook", label: "📜 Rulebook" },
   
   // Add more here
