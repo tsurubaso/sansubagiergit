@@ -19,7 +19,7 @@ export default function Welcome() {
       >
         <h1 className="text-3xl font-extrabold mb-4 flex items-center gap-2">
           <img src="/favicon.ico" alt="Logo" className="w-8 h-8" />
-          Welcome to the SanSuBagier!
+          Welcome to the SanSuBagier !
         </h1>
         <p className="text-lg mb-6">
           You always have been reading wonderful stories...
