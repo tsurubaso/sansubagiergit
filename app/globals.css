@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #0f0f0f;
+  --foreground: #bbbbbb;
+  --card-background: #1a1a1a;
+  --border-color: #333;
 }
 
 @media (prefers-color-scheme: light) {
@@ -43,6 +45,7 @@ body {
 
 /* Optional: Customize headings */
 .markdown-content h1 {
+  color: #636363; /* ou une autre couleur */
   font-size: 2.5rem;
   text-align: center; /* Center the main heading */
   margin-bottom: 20px;

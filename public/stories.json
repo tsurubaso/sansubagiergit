@@ -1,0 +1,38 @@
+[
+  {
+    "id": "techexample",
+    "title": "techexample",
+    "description": "Bon, c'est le template mais je veux voir ce que ça donne donc provisoirement fragment",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "techexample",
+    "filename": "techexample.md"
+  },
+  {
+    "id": "UneHistoire",
+    "title": "Une Histoire sans l’histoire",
+    "description": "Pourquoi en 2023/24 j'ai commencé à écrire des nouvelles de sf, ça c'est la série de posts laissé sur Facebook dans lesquels j'ai établi la logique de l'univers. j'ai changé des trucs après, et tout ne correspond pas.",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "UneHistoire",
+    "filename": "UneHistoire.md"
+  },
+  {
+    "id": "UneHistoire2",
+    "title": "Une Histoire sans l’histoire 2",
+    "description": "Pourquoi en 2023/24 j'ai commencé à écrire des nouvelles de sf, ça c'est la série de posts laissé sur Facebook dans lesquels j'ai établi la logique de l'univers. j'ai changé des trucs après, et tout ne correspond pas.",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "UneHistoire2",
+    "filename": "UneHistoire2.md"
+  },
+  {
+    "id": "UneHistoire3",
+    "title": "Une Histoire sans l’histoire 3",
+    "description": "Pourquoi en 2023/24 j'ai commencé à écrire des nouvelles de sf, ça c'est la série de posts laissé sur Facebook dans lesquels j'ai établi la logique de l'univers. j'ai changé des trucs après, et tout ne correspond pas.",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "UneHistoire3",
+    "filename": "UneHistoire3.md"
+  }
+]

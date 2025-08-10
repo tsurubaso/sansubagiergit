@@ -1,33 +1,41 @@
-// scripts/scanBooks.js
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+const fs = require("fs").promises;
+const path = require("path");
+const matter = require("gray-matter");
 
-const booksDir = path.join(process.cwd(), "public", "books");
-const outputFile = path.join(process.cwd(), "public", "books.json");
+const booksFolder = path.join(__dirname,"public", "books");
+const outputPath = path.join(__dirname, "public", "stories.json");
 
-function getBooksData() {
-  const files = fs.readdirSync(booksDir);
+async function generateStoriesJson() {
+  try {
+    const files = await fs.readdir(booksFolder, { withFileTypes: true });
+    const stories = [];
 
-  const books = files
-    .filter((file) => file.endsWith(".md"))
-    .map((filename) => {
-      const fullPath = path.join(booksDir, filename);
-      const fileContents = fs.readFileSync(fullPath, "utf8");
+    for (const file of files) {
+      if (file.isFile() && file.name.endsWith(".md")) {
+        const filePath = path.join(booksFolder, file.name);
+        const content = await fs.readFile(filePath, "utf8");
+        const { data } = matter(content);
 
-      const { data: frontmatter, content } = matter(fileContents);
-      const slug = filename.replace(/\.md$/, "");
+        const baseName = path.basename(file.name, ".md");
 
-      return { slug, frontmatter, content };
-    });
+        // Fallbacks si frontmatter partiel
+        stories.push({
+          id: baseName,
+          title: data.title || baseName,
+          description: data.description || "",
+          type: data.type || "story",
+          status: data.status || "story", // comme dans ton filtre front
+          link: baseName,
+          filename: file.name,
+        });
+      }
+    }
 
-  return books;
+    await fs.writeFile(outputPath, JSON.stringify(stories, null, 2), "utf8");
+    console.log("✅ Fichier stories.json généré !");
+  } catch (err) {
+    console.error("🔥 Erreur :", err);
+  }
 }
 
-function saveBooksToJson() {
-  const books = getBooksData();
-  fs.writeFileSync(outputFile, JSON.stringify(books, null, 2), "utf8");
-  console.log(`✅ Books data saved to ${outputFile}`);
-}
-
-saveBooksToJson();
+generateStoriesJson();
