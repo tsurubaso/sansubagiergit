@@ -1,12 +1,543 @@
 [
   {
-    "id": "techexample",
-    "title": "techexample",
-    "description": "Bon, c'est le template mais je veux voir ce que ça donne donc provisoirement fragment",
+    "id": "AImaronnier",
+    "title": "L'intelligence artificielle est un marronnier inépuisable",
+    "description": "J'avais fait ce texte avant Chatgpt, avant Deepseek ou Mistral. Quel serait l'intérêt d'une I.A.",
+    "type": "SF Futuristique",
+    "status": "other",
+    "link": "AImaronnier",
+    "filename": "AImaronnier.md"
+  },
+  {
+    "id": "ArmeSecreteBD",
+    "title": "Arme secrète BD",
+    "description": "Arme secrète BD",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "ArmeSecreteBD",
+    "filename": "ArmeSecreteBD.md"
+  },
+  {
+    "id": "ArmeSecreteBE",
+    "title": "Arme secrète BE",
+    "description": "Arme secrète BE",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "ArmeSecreteBE",
+    "filename": "ArmeSecreteBE.md"
+  },
+  {
+    "id": "Audrey1",
+    "title": "Audrey",
+    "description": "J'avais fait ce texte avant Chatgpt, avant Deepseek ou Mistral. Quel serait l'intérêt d'une I.A.",
+    "type": "SF Futuristique",
+    "status": "other",
+    "link": "Audrey1",
+    "filename": "Audrey1.md"
+  },
+  {
+    "id": "Audrey2",
+    "title": "Audrey 2",
+    "description": "J'avais fait ce texte avant Chatgpt, avant Deepseek ou Mistral. Quel serait l'intérêt d'une I.A. ça, c'est la deuxième partie.",
+    "type": "SF Futuristique",
+    "status": "other",
+    "link": "Audrey2",
+    "filename": "Audrey2.md"
+  },
+  {
+    "id": "BaseA",
+    "title": "Base A",
+    "description": "Le forage d'une cavité, des machines monstrueuses, et la découverte de...",
     "type": "SF Futuristique",
     "status": "story",
+    "link": "BaseA",
+    "filename": "BaseA.md"
+  },
+  {
+    "id": "BaseB",
+    "title": "Base B",
+    "description": "Un homme regarde sous lui une forêt, sa petite amie le rejoint...",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseB",
+    "filename": "BaseB.md"
+  },
+  {
+    "id": "BaseBK",
+    "title": "Base BK After Base A",
+    "description": "Ticko se réveille dans la salle mystèrieuse, et ne souvient de rien...",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "BaseBK",
+    "filename": "BaseBK.md"
+  },
+  {
+    "id": "BaseBN",
+    "title": "Base BN After Base R",
+    "description": "Ticko se réveille dans son lit après un horrible cauchemar, explications sur le room engine et ses skins...",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "BaseBN",
+    "filename": "BaseBN.md"
+  },
+  {
+    "id": "BaseBQ",
+    "title": "Base BQ",
+    "description": "Un peu de souvenir, réflexions sur l'archéologie et notre personnage Lybie dans une ville abandonnée",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "BaseBQ",
+    "filename": "BaseBQ.md"
+  },
+  {
+    "id": "BaseC",
+    "title": "Base C",
+    "description": "courte réflection sur l'ordre et le désordre dans l'espace au cinéma",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseC",
+    "filename": "BaseC.md"
+  },
+  {
+    "id": "BaseE",
+    "title": "Base E",
+    "description": "ADN, génétique et épigénétique",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "BaseE",
+    "filename": "BaseE.md"
+  },
+  {
+    "id": "BaseG",
+    "title": "Base G",
+    "description": "La vieille dame du jardin des Batignolles",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseG",
+    "filename": "BaseG.md"
+  },
+  {
+    "id": "BaseH",
+    "title": "Base H",
+    "description": "La Bibliothèque Sainte-Geneviève et quelques souvenirs égoistes.",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseH",
+    "filename": "BaseH.md"
+  },
+  {
+    "id": "BaseI",
+    "title": "Base I",
+    "description": "La situation sysmique de la Lune",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "BaseI",
+    "filename": "BaseI.md"
+  },
+  {
+    "id": "BaseK",
+    "title": "Base K",
+    "description": "essai dans l'horreur",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseK",
+    "filename": "BaseK.md"
+  },
+  {
+    "id": "BaseL",
+    "title": "Base L",
+    "description": "9 octobre 2067",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseL",
+    "filename": "BaseL.md"
+  },
+  {
+    "id": "BaseM",
+    "title": "Base M",
+    "description": "le future de l'industrie minière, et l'hôtel du cratère",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseM",
+    "filename": "BaseM.md"
+  },
+  {
+    "id": "BaseN",
+    "title": "Base N",
+    "description": "un peu en désordre mais de bonnes idées, space mining, un empire spacial, utilisations des ressources lunaires…",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseN",
+    "filename": "BaseN.md"
+  },
+  {
+    "id": "BaseO",
+    "title": "Base O",
+    "description": "La navette de transport",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseO",
+    "filename": "BaseO.md"
+  },
+  {
+    "id": "BaseP",
+    "title": "Base P",
+    "description": "La description d'un amour naissant dans une salle d'attente aidé par un AI",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseP",
+    "filename": "BaseP.md"
+  },
+  {
+    "id": "BaseR",
+    "title": "Base R",
+    "description": "le monstre",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseR",
+    "filename": "BaseR.md"
+  },
+  {
+    "id": "BaseS",
+    "title": "Base S",
+    "description": "Histoire de la colonisation lunaire, la strucuture des différentes entreprises en charge et l'étude par l'unité centrale de la salle aux piliers",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseS",
+    "filename": "BaseS.md"
+  },
+  {
+    "id": "BaseU",
+    "title": "Base U",
+    "description": "De retour du chantier, il d'endort chez ses parents et fait un rêve",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "BaseU",
+    "filename": "BaseU.md"
+  },
+  {
+    "id": "BaseV",
+    "title": "Base V",
+    "description": "Tentative d'un historique de la coloniosation de la Lune",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "BaseV",
+    "filename": "BaseV.md"
+  },
+  {
+    "id": "BaseW",
+    "title": "Base W",
+    "description": "deux extraits, le premier sur la réalité de la chute de la natalité et ses conséquences, le second sur une mauvaise interprétation des lois de la physique",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "BaseW",
+    "filename": "BaseW.md"
+  },
+  {
+    "id": "commeunenfantgate",
+    "title": "Comme un enfant gaté",
+    "description": "bla",
+    "type": "Essai",
+    "status": "other",
+    "link": "commeunenfantgate",
+    "filename": "commeunenfantgate.md"
+  },
+  {
+    "id": "Elle",
+    "title": "Elle",
+    "description": "Je ne me souviens pas",
+    "type": "SF Futuristique",
+    "status": "other",
+    "link": "Elle",
+    "filename": "Elle.md"
+  },
+  {
+    "id": "laPorteSecreteBR",
+    "title": "la Porte Secrete BR",
+    "description": "Lybie se promene dans des ruines, là-haut",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "laPorteSecreteBR",
+    "filename": "laPorteSecreteBR.md"
+  },
+  {
+    "id": "laPorteSecreteBS",
+    "title": "la Porte Secrete BS 2",
+    "description": "prologue, reflexion sur l'archeologie et premisses sur le theme de l'histoire",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "laPorteSecreteBS",
+    "filename": "laPorteSecreteBS.md"
+  },
+  {
+    "id": "MadridBJ",
+    "title": "Madrid dans les années 80 BJ",
+    "description": "Une riche héritière, Vanessa, et comment elle a frôlé la mort...",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "MadridBJ",
+    "filename": "MadridBJ.md"
+  },
+  {
+    "id": "MadridBL",
+    "title": "Madrid dans les années 80 BL",
+    "description": "Une riche héritière, Vanessa, et comment après une folie, elle doit rejoindre...",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "MadridBL",
+    "filename": "MadridBL.md"
+  },
+  {
+    "id": "MadridBM",
+    "title": "Madrid dans les années 80 BM",
+    "description": "Un jeune homme et son père, deux grand photographes, et la paternité...",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "MadridBM",
+    "filename": "MadridBM.md"
+  },
+  {
+    "id": "MadridBO",
+    "title": "Madrid dans les années 80 BO",
+    "description": "Le vieil homme est accueilli sur la Lune par son petit fils, le hangar des machines, la plage où il retrouve le reste de sa famille...",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "MadridBO",
+    "filename": "MadridBO.md"
+  },
+  {
+    "id": "Moscou",
+    "title": "Moscou 10 ans après la paix",
+    "description": "Rencontre avec d'anciens fantomes",
+    "type": "SF Futuristique",
+    "status": "other",
+    "link": "Moscou",
+    "filename": "Moscou.md"
+  },
+  {
+    "id": "OldDivers",
+    "title": "Divers old texts",
+    "description": "Divers texts",
+    "type": "SF Futuristique",
+    "status": "other",
+    "link": "OldDivers",
+    "filename": "OldDivers.md"
+  },
+  {
+    "id": "OldDivers2",
+    "title": "Divers old texts 2",
+    "description": "Divers texts 2",
+    "type": "SF Futuristique",
+    "status": "other",
+    "link": "OldDivers2",
+    "filename": "OldDivers2.md"
+  },
+  {
+    "id": "sansserif1",
+    "title": "Sans sérif 1",
+    "description": "Une réflection un peu mouillée, deux, trois idées",
+    "type": "Essai",
+    "status": "other",
+    "link": "sansserif1",
+    "filename": "sansserif1.md"
+  },
+  {
+    "id": "sansserif2",
+    "title": "Sans sérif 2",
+    "description": "Une réflection un peu mouillée, deux, trois idées",
+    "type": "Essai",
+    "status": "other",
+    "link": "sansserif2",
+    "filename": "sansserif2.md"
+  },
+  {
+    "id": "sansserif3",
+    "title": "Sans sérif 3",
+    "description": "Une réflection un peu mouillée, deux, trois idées",
+    "type": "Essai",
+    "status": "other",
+    "link": "sansserif3",
+    "filename": "sansserif3.md"
+  },
+  {
+    "id": "SombreRegretBC",
+    "title": "Sombre Regret BC",
+    "description": "Dorian, va dans une vieille ville abandonnée, et pense à son professeur",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "SombreRegretBC",
+    "filename": "SombreRegretBC.md"
+  },
+  {
+    "id": "StageLaHautAG",
+    "title": "Un stage là-haut",
+    "description": "Un stage là-haut",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "StageLaHautAG",
+    "filename": "StageLaHautAG.md"
+  },
+  {
+    "id": "StageLaHautAH",
+    "title": "Un stage là-haut2",
+    "description": "Un stage là-haut2",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "StageLaHautAH",
+    "filename": "StageLaHautAH.md"
+  },
+  {
+    "id": "StageLaHautAJ",
+    "title": "Un stage là-haut3",
+    "description": "Un stage là-haut3",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "StageLaHautAJ",
+    "filename": "StageLaHautAJ.md"
+  },
+  {
+    "id": "StageLaHautAK",
+    "title": "Un stage là-haut4",
+    "description": "Un stage là-haut4",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "StageLaHautAK",
+    "filename": "StageLaHautAK.md"
+  },
+  {
+    "id": "StageLaHautAL",
+    "title": "Un stage là-haut5",
+    "description": "Un stage là-haut5",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "StageLaHautAL",
+    "filename": "StageLaHautAL.md"
+  },
+  {
+    "id": "StageLaHautAM",
+    "title": "Un stage là-haut5",
+    "description": "Un stage là-haut6",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "StageLaHautAM",
+    "filename": "StageLaHautAM.md"
+  },
+  {
+    "id": "StageLaHautAN",
+    "title": "Un stage là-haut6",
+    "description": "Un stage là-haut6",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "StageLaHautAN",
+    "filename": "StageLaHautAN.md"
+  },
+  {
+    "id": "StageLaHautAO",
+    "title": "Un stage là-haut7",
+    "description": "Un stage là-haut7",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "StageLaHautAO",
+    "filename": "StageLaHautAO.md"
+  },
+  {
+    "id": "StageLaHautAQ",
+    "title": "Un stage là-haut7",
+    "description": "Un stage là-haut7",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "StageLaHautAQ",
+    "filename": "StageLaHautAQ.md"
+  },
+  {
+    "id": "techexample",
+    "title": "template",
+    "description": "Bon, c'est le template mais je veux voir ce que ça donne donc provisoirement fragment",
+    "type": "SF Futuristique",
+    "status": "tech",
     "link": "techexample",
     "filename": "techexample.md"
+  },
+  {
+    "id": "TroisTouristesAA",
+    "title": "Trois touristes AA",
+    "description": "Sato continue sa visite de la base",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "TroisTouristesAA",
+    "filename": "TroisTouristesAA.md"
+  },
+  {
+    "id": "TroisTouristesAB",
+    "title": "Trois touristes AB",
+    "description": "Ici on ne parle presque pas des trois touristes, on parle surtout du Magna Serbe Franck Tark, qui aimait trop la danse",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "TroisTouristesAB",
+    "filename": "TroisTouristesAB.md"
+  },
+  {
+    "id": "TroisTouristesAC",
+    "title": "Trois touristes AC",
+    "description": "Les trois touristes, l'Opéra Garnier là-haut",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "TroisTouristesAC",
+    "filename": "TroisTouristesAC.md"
+  },
+  {
+    "id": "TroisTouristesAD",
+    "title": "Trois touristes AD",
+    "description": "Envolée lyrique, le pourquoi de cette histoire",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "TroisTouristesAD",
+    "filename": "TroisTouristesAD.md"
+  },
+  {
+    "id": "TroisTouristesAE",
+    "title": "Trois touristes AE",
+    "description": "Las Vegas, et un peu de rose",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "TroisTouristesAE",
+    "filename": "TroisTouristesAE.md"
+  },
+  {
+    "id": "TroisTouristesAF",
+    "title": "Trois touristes AF",
+    "description": "Las Vegas, et un peu de rose, une vieille dame dit la vérité",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "TroisTouristesAF",
+    "filename": "TroisTouristesAF.md"
+  },
+  {
+    "id": "TroisTouristesQ",
+    "title": "Trois touristes Q",
+    "description": "présentation des trois personnesges, leur départ de la terre, un vieux beau encore efficace, un salaryman japonais, et une passionnée turque",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "TroisTouristesQ",
+    "filename": "TroisTouristesQ.md"
+  },
+  {
+    "id": "TroisTouristesT",
+    "title": "Trois touristes T",
+    "description": "Trois touristes, chacun face au miroir de leur chambre, une présentation de personnages",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "TroisTouristesT",
+    "filename": "TroisTouristesT.md"
+  },
+  {
+    "id": "TroisTouristesY",
+    "title": "Trois Touristes Y",
+    "description": "Trois Touristes, Tour de lumière, serres italiennes et les mystères de l'unité centrale",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "TroisTouristesY",
+    "filename": "TroisTouristesY.md"
   },
   {
     "id": "UneHistoire",
@@ -34,5 +565,104 @@
     "status": "story",
     "link": "UneHistoire3",
     "filename": "UneHistoire3.md"
+  },
+  {
+    "id": "WeekendSurTerreAR",
+    "title": "Weekend Sur Terre AR",
+    "description": "Un monde après la fin de la chute. Un monde en renaissance",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreAR",
+    "filename": "WeekendSurTerreAR.md"
+  },
+  {
+    "id": "WeekendSurTerreAS",
+    "title": "Weekend Sur Terre AS",
+    "description": "Arrivé sur Terre de Dorian, une triste nouvelle pour un fils",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreAS",
+    "filename": "WeekendSurTerreAS.md"
+  },
+  {
+    "id": "WeekendSurTerreAT",
+    "title": "Weekend Sur Terre AT",
+    "description": "Dorian, va dans une vieille ville abandonnée, et pense à son professeur",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreAT",
+    "filename": "WeekendSurTerreAT.md"
+  },
+  {
+    "id": "WeekendSurTerreAU",
+    "title": "Weekend Sur Terre AU",
+    "description": "Dorian, va dans une vieille ville abandonnée, et pense à son professeur",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreAU",
+    "filename": "WeekendSurTerreAU.md"
+  },
+  {
+    "id": "WeekendSurTerreAV",
+    "title": "Weekend Sur Terre AV",
+    "description": "Dorian, va dans une vieille ville abandonnée, et pense à son professeur",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreAV",
+    "filename": "WeekendSurTerreAV.md"
+  },
+  {
+    "id": "WeekendSurTerreAW",
+    "title": "Weekend Sur Terre AW",
+    "description": "Dorian, va dans une vieille ville abandonnée, et pense à son professeur",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreAW",
+    "filename": "WeekendSurTerreAW.md"
+  },
+  {
+    "id": "WeekendSurTerreAX",
+    "title": "Weekend Sur Terre AX",
+    "description": "Dorian, va dans une vieille ville abandonnée, et pense à son professeur",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreAX",
+    "filename": "WeekendSurTerreAX.md"
+  },
+  {
+    "id": "WeekendSurTerreAY",
+    "title": "Weekend Sur Terre AY",
+    "description": "Dorian, va dans une vieille ville abandonnée, et pense à son professeur",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreAY",
+    "filename": "WeekendSurTerreAY.md"
+  },
+  {
+    "id": "WeekendSurTerreAZ",
+    "title": "Weekend Sur Terre AZ",
+    "description": "Dorian, va dans une vieille ville abandonnée, et pense à son professeur",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreAZ",
+    "filename": "WeekendSurTerreAZ.md"
+  },
+  {
+    "id": "WeekendSurTerreBA",
+    "title": "Weekend Sur Terre BA",
+    "description": "Dorian, va dans une vieille ville abandonnée, et pense à son professeur",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreBA",
+    "filename": "WeekendSurTerreBA.md"
+  },
+  {
+    "id": "WeekendSurTerreBB",
+    "title": "Weekend Sur Terre BB",
+    "description": "Dorian, va dans une vieille ville abandonnée, et pense à son professeur",
+    "type": "SF Futuristique",
+    "status": "draft",
+    "link": "WeekendSurTerreBB",
+    "filename": "WeekendSurTerreBB.md"
   }
 ]
