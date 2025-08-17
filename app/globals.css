@@ -21,6 +21,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Pour les Cards ou divs qui contiennent le texte */
+.card {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  overflow: hidden;          /* évite tout dépassement */
+  box-sizing: border-box;    /* inclut padding/border dans le calcul */
+  max-width: 100%;           /* respecte la taille parent */
+}
+
 
 
 /* Global styles for centering and styling the markdown content */
@@ -35,12 +46,15 @@ body {
   text-align: justify; /* Optional: Justify the text for a neat appearance */
 }
 
-/* Restrict text width for better readability */
+/* Assure que les textes ne débordent pas horizontalement */
 .markdown-content > * {
   max-width: 800px;
   width: 100%;
   font-family: 'Georgia', serif;
   line-height: 1.8;
+  overflow-wrap: break-word; /* force le retour à la ligne */
+  word-break: break-word;    /* casse les mots trop longs */
+  white-space: normal;       /* évite que le texte reste sur une seule ligne */
 }
 
 /* Optional: Customize headings */
