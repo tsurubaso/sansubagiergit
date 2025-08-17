@@ -29,18 +29,83 @@ export default function Welcome() {
           But what good is a story without an illustration?
         </p>
         <p className="text-lg mb-6">
-          Think about <strong>Jules Verne</strong> without{" "}
-          <em>Édouard Riou, Alphonse de Neuville, Léon Benett</em>, and{" "}
-          <em>Jules Férat</em>.<br />
-          Or <em>Bayard</em>!
+          Think about{" "}
+          <strong>
+            <a
+              href="https://en.wikipedia.org/wiki/Jules_Verne"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Jules Verne
+            </a>
+          </strong>{" "}
+          without{" "}
+          <em>
+            <a
+              href="https://fr.wikipedia.org/wiki/%C3%89douard_Riou"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Édouard Riou
+            </a>
+            ,{" "}
+            <a
+              href="https://fr.wikipedia.org/wiki/Alphonse_de_Neuville"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Alphonse de Neuville
+            </a>
+            ,{" "}
+            <a
+              href="https://fr.wikipedia.org/wiki/L%C3%A9on_Benett"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Léon Benett
+            </a>
+          </em>
+          , and{" "}
+          <em>
+            <a
+              href="https://fr.wikipedia.org/wiki/Jules_F%C3%A9rat"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Jules Férat
+            </a>
+          </em>
+          .<br />
+          Or{" "}
+          <em>
+            <a
+              href="https://en.wikipedia.org/wiki/%C3%89mile_Bayard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Émile-Antoine Bayard
+            </a>
+          </em>
+          !
         </p>
+
         <p className="text-lg mb-6">
           Yes, you see, in your mind, and for generations, those stories had
           always been illustrated.
           <br />
           The art of the Editor has always been to combine text and image.
           <br />
-          For Jules it was <strong>Pierre-Jules Hetzel</strong>.
+          For Jules it was{" "}
+          <strong>
+            <a
+              href="https://en.wikipedia.org/wiki/Pierre-Jules_Hetzel"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pierre-Jules Hetzel
+            </a>
+          </strong>
+          .
         </p>
 
         <hr className="my-8 border-gray-500" />
