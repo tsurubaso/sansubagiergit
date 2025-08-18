@@ -1,19 +1,12 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: dark; /* Force dark mode everywhere */
   --background: #0f0f0f;
   --foreground: #bbbbbb;
   --card-background: #1a1a1a;
   --border-color: #333;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --foreground: #171717;
-  }
-}
-
 
 body {
   color: var(--foreground);
@@ -21,47 +14,44 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Pour les Cards ou divs qui contiennent le texte */
+/* For Cards or divs that contain text */
 .card {
   background: var(--card-background);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 20px;
-  overflow: hidden;          /* évite tout dépassement */
-  box-sizing: border-box;    /* inclut padding/border dans le calcul */
-  max-width: 100%;           /* respecte la taille parent */
+  overflow: hidden;          /* prevent overflow */
+  box-sizing: border-box;    /* include padding/border in width/height */
+  max-width: 100%;           /* respect parent size */
 }
 
-
-
-/* Global styles for centering and styling the markdown content */
+/* Global styles for centering and styling markdown content */
 .markdown-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Full height of the viewport */
+  min-height: 100vh;
   padding: 20px;
-  background-color: var(--background); /* Light background for a document feel */
-  text-align: justify; /* Optional: Justify the text for a neat appearance */
+  background-color: var(--background);
+  text-align: justify;
 }
 
-/* Assure que les textes ne débordent pas horizontalement */
 .markdown-content > * {
   max-width: 800px;
   width: 100%;
   font-family: 'Georgia', serif;
   line-height: 1.8;
-  overflow-wrap: break-word; /* force le retour à la ligne */
-  word-break: break-word;    /* casse les mots trop longs */
-  white-space: normal;       /* évite que le texte reste sur une seule ligne */
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 
-/* Optional: Customize headings */
+/* Headings */
 .markdown-content h1 {
-  color: #636363; /* ou une autre couleur */
+  color: #636363;
   font-size: 2.5rem;
-  text-align: center; /* Center the main heading */
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -89,7 +79,6 @@ body {
   margin: 20px 0;
   color: var(--foreground); 
 }
-
 
 /* Lists */
 .markdown-content ul,
