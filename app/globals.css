@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark; /* Force dark mode everywhere */
+  color-scheme: dark; /* Correct usage */
   --background: #0f0f0f;
   --foreground: #bbbbbb;
   --card-background: #1a1a1a;
   --border-color: #333;
 }
+
 
 body {
   color: var(--foreground);
@@ -78,16 +79,4 @@ body {
   padding-left: 15px;
   margin: 20px 0;
   color: var(--foreground); 
-}
-
-/* Lists */
-.markdown-content ul,
-.markdown-content ol {
-  margin: 15px 0;
-  padding-left: 40px;
-}
-
-.markdown-content iframe {
-  display: block;
-  margin: 1.5em 0;
 }
