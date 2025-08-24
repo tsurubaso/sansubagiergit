@@ -6,11 +6,12 @@ import { useState } from "react";
 
 const navItems = [
   { href: "/", label: "🏠 Home" },
+  { href: "/rulebook", label: "📜 Rulebook" },
   { href: "/storylist", label: "📚 Storylist" },
   { href: "/draftlist", label: "📝 Draftlist" },
   { href: "/fragmentlist", label: "✂️ Fragmentlist" },
   { href: "/otherlist", label: "🗂️ Otherlist" },
-  { href: "/rulebook", label: "📜 Rulebook" },
+  
 ];
 
 export default function Sidebar() {
