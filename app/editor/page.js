@@ -3,15 +3,8 @@ import { useState, useEffect } from "react";
 
 export default function MarkdownEditor() {
   const [content, setContent] = useState("");
-  const [canSend, setCanSend] = useState(false);
 
   useEffect(() => {
-    // vérifie si l’URL contient le secret
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("secret") === process.env.NEXT_PUBLIC_EDITOR_SECRET) {
-      setCanSend(true);
-    }
-
     // texte par défaut
    setContent(`
 #La géante
@@ -56,7 +49,7 @@ Charles Baudelaire`);
       <textarea
         style={{
           width: "100%",
-          height: "320px",
+          height: "800px",
           padding: "0.5rem",
           fontFamily: "monospace",
           border: "1px solid #ccc",
@@ -64,22 +57,21 @@ Charles Baudelaire`);
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />
-      {canSend && (
-        <button
-          onClick={sendMail}
-          style={{
-            marginTop: "1rem",
-            padding: "0.5rem 1rem",
-            backgroundColor: "#0070f3",
-            color: "white",
-            borderRadius: "4px",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Envoyer par email
-        </button>
-      )}
+      
+      <button
+        onClick={sendMail}
+        style={{
+          marginTop: "1rem",
+          padding: "0.5rem 1rem",
+          backgroundColor: "transparent", // transparent
+          color: "transparent", // texte invisible
+          border: "none",
+          cursor: "default",
+        }}
+      >
+        .
+      </button>
+      
     </div>
   );
 }

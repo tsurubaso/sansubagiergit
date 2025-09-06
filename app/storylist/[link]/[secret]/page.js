@@ -5,6 +5,7 @@ export default function SecretEditor({ params }) {
 
   
   const { link, secret } = use(params);
+
   // Secret depuis .env
   const SECRET_KEY = process.env.NEXT_PUBLIC_EDITOR_SECRET;
 

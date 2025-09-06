@@ -45,7 +45,7 @@ const StoriesList = () => {
         {filteredStories.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {filteredStories.map((story) => (
-              <Link key={story.id} href={`/storylist/${story.link}`} passHref>
+              <Link key={story.id} href={`/otherlist/${story.link}`} passHref>
                 <div
                   className="rounded-2xl p-5 border transition-transform cursor-pointer
                     hover:-translate-y-1 shadow-lg hover:shadow-xl"
