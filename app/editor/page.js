@@ -14,60 +14,27 @@ export default function MarkdownEditor() {
 
     // texte par défaut
    setContent(`
+#La géante
 
-Au Lecteur
+Du temps que la Nature en sa verve puissante
+Concevait chaque jour des enfants monstrueux,
+J'eusse aimé vivre auprès d'une jeune géante,
+Comme aux pieds d'une reine un chat voluptueux.
 
-La sottise, l'erreur, le péché, la lésine,
-Occupent nos esprits et travaillent nos corps,
-Et nous alimentons nos aimables remords,
-Comme les mendiants nourrissent leur vermine.
+J'eusse aimé voir son corps fleurir avec son âme
+Et grandit librement dans ses terribles jeux ;
+Deviner si son cœur couve une sombre flamme
+Aux humides brouillards qui nagent dans ses yeux ;
 
-Nos péchés sont têtus, nos repentirs sont lâches;
-Nous nous faisons payer grassement nos aveux,
-Et nous rentrons gaiement dans le chemin bourbeux,
-Croyant par de vils pleurs laver toutes nos taches.
+Parcourir à loisir ses magnifiques formes ;
+Ramper sur le versant de ses genoux énormes,
+Et parfois en été, quand les soleils malsains,
 
-Sur l'oreiller du mal c'est Satan Trismégiste
-Qui berce longuement notre esprit enchanté,
-Et le riche métal de notre volonté
-Est tout vaporisé par ce savant chimiste.
+Lasse, la font s'étendre à travers la campagne,
+Dormir nonchalamment à l'ombre de ses seins,
+Comme un hameau paisible au pied d'une montagne.
 
-C'est le Diable qui tient les fils qui nous remuent!
-Aux objets répugnants nous trouvons des appas;
-Chaque jour vers l'Enfer nous descendons d'un pas,
-Sans horreur, à travers des ténèbres qui puent.
-
-Ainsi qu'un débauché pauvre qui baise et mange
-Le sein martyrisé d'une antique catin,
-Nous volons au passage un plaisir clandestin
-Que nous pressons bien fort comme une vieille orange.
-
-Serré, fourmillant, comme un million d'helminthes,
-Dans nos cerveaux ribote un peuple de Démons,
-Et, quand nous respirons, la Mort dans nos poumons
-Descend, fleuve invisible, avec de sourdes plaintes.
-
-Si le viol, le poison, le poignard, l'incendie,
-N'ont pas encor brodé de leurs plaisants dessins
-Le canevas banal de nos piteux destins,
-C'est que notre âme, hélas! n'est pas assez hardie.
-
-Mais parmi les chacals, les panthères, les lices,
-Les singes, les scorpions, les vautours, les serpents,
-Les monstres glapissants, hurlants, grognants, rampants,
-Dans la ménagerie infâme de nos vices,
-
-II en est un plus laid, plus méchant, plus immonde!
-Quoiqu'il ne pousse ni grands gestes ni grands cris,
-Il ferait volontiers de la terre un débris
-Et dans un bâillement avalerait le monde;
-
-C'est l'Ennui! L'oeil chargé d'un pleur involontaire,
-II rêve d'échafauds en fumant son houka.
-Tu le connais, lecteur, ce monstre délicat,
-— Hypocrite lecteur, — mon semblable, — mon frère!
-
-— Charles Baudelaire`);
+Charles Baudelaire`);
 }, []);
 
   const sendMail = async () => {

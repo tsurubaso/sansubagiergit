@@ -3,10 +3,14 @@ import { useState, useEffect } from "react";
 
 export default function SecretEditor({ params }) {
   const { link, secret } = params;
-  const SECRET_KEY = "x7k9b2a1"; // change to your own secret
+
+  // Secret depuis .env
+  const SECRET_KEY = process.env.NEXT_PUBLIC_EDITOR_SECRET;
 
   // Check secret
-  if (secret !== SECRET_KEY) return <p style={{ padding: "2rem", color: "red" }}>Unauthorized ❌</p>;
+  if (secret !== SECRET_KEY) {
+    return <p style={{ padding: "2rem", color: "red" }}>Unauthorized ❌</p>;
+  }
 
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(true);
@@ -20,8 +24,6 @@ export default function SecretEditor({ params }) {
         if (!res.ok) throw new Error("Failed to fetch the file");
 
         let text = await res.text();
-        // Remove front matter if present
-        text = text.replace(/^---[\s\S]+?---\s*/, "");
         setContent(text);
       } catch (err) {
         setError(err.message);
@@ -74,9 +76,8 @@ export default function SecretEditor({ params }) {
         style={{
           marginTop: "1rem",
           padding: "0.5rem 1rem",
-          backgroundColor: "#0070f3",
-          color: "white",
-          borderRadius: "4px",
+          backgroundColor: "transparent", // transparent
+          color: "transparent", // texte invisible
           border: "none",
           cursor: "pointer",
         }}
