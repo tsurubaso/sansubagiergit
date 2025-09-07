@@ -17,23 +17,24 @@ export default function RulePage() {
           border: "1px solid #444",
         }}
       >
-        <h1 className="text-3xl font-extrabold mb-4">
-          📖 Rulebook — Naming & Organization
+        <h1 className="text-3xl font-extrabold text-center mb-4">
+          📖 Rulebook
         </h1>
 
-        <h2 className="text-2xl font-bold mb-4">📝 Naming Rules</h2>
+        <h2 className="text-2xl font-bold mb-4">📝 Naming</h2>
         <ol className="list-decimal list-inside text-lg mb-6 space-y-2">
           <li>
             <strong>Series name first</strong> — The series title appears first,
-            followed by the story rank as a letter (A, B, C...) instead of a number.
+            followed by the story rank as a letter (A, B, C...) instead of a
+            number.
           </li>
           <li>
             <strong>Missing letters are allowed</strong> — Gaps in the alphabet
             are intentional.
           </li>
           <li>
-            <strong>Shared universe</strong> — All stories take place in the same
-            fictional universe.
+            <strong>Shared universe</strong> — All stories take place in the
+            same fictional universe.
           </li>
           <li>
             <strong>Loose relations</strong> — Connections between stories are
@@ -51,20 +52,20 @@ export default function RulePage() {
             writer’s workspace.
           </li>
           <li>
-            <strong>Fragments ✂️</strong> — Incomplete pieces or excerpts, sometimes
-            staged here before moving to the <em>stories</em> section.
+            <strong>Fragments ✂️</strong> — Incomplete pieces or excerpts,
+            sometimes staged here before moving to the <em>stories</em> section.
           </li>
-            <li>
-              <strong>Stories 📚</strong> — The finsihed work, or what I want to
-              be so.
-            </li>
-             <li>
-              <strong>Others 🗂️</strong> — Old texts. Because old stuffs are also cool to read.
-            </li>
+          <li>
+            <strong>Stories 📚</strong> — The finsihed work, or what I want to
+            be so.
+          </li>
+          <li>
+            <strong>Others 🗂️</strong> — Old texts. Because old stuffs are also
+            cool to read.
+          </li>
         </ul>
 
         <hr className="my-8 border-gray-500" />
-
       </div>
     </div>
   );
