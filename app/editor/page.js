@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function MarkdownEditor() {
   const [content, setContent] = useState("");
-
+const [status, setStatus] = useState("");
   useEffect(() => {
     // texte par défaut
    setContent(`
