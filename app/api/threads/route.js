@@ -1,3 +1,6 @@
+//no use of node fetch I am in next
+
+
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
