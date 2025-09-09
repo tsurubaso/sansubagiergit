@@ -20,7 +20,7 @@ export async function POST(req) {
     const userId = process.env.THREADS_USER_ID || "me"; // "me" fonctionne si le token correspond à ton compte
 
     const url = new URL(`https://graph.threads.net/v1.0/${userId}/threads`);
-    url.searchParams.set("media_type", "TEXT"); // ✅ string!
+    url.searchParams.set("media_type", "TEXT"); // 
     url.searchParams.set("text", text);
     url.searchParams.set("access_token", token);
     url.searchParams.set("auto_publish_text", "true"); // optional: publish in one call

@@ -66,6 +66,28 @@ Charles Baudelaire`);
     }
   };
 
+    const handlePostVK = async () => {
+    setStatus("⏳ Posting...");
+
+    try {
+      const res = await fetch("/api/vk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content }),
+      });
+
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        setStatus("Post successful!");
+      } else {
+        setStatus(" Error: " + (result.error || "Unknown error"));
+      }
+    } catch (err) {
+      setStatus(" Network error: " + err.message);
+    }
+  };
+
   // Efface le status après 60 secondes
   useEffect(() => {
     if (!status) return; // rien à faire si vide
@@ -112,6 +134,19 @@ Charles Baudelaire`);
         }}
       >
         T
+      </button>
+      <button
+        onClick={handlePostVK}
+        style={{
+          marginTop: "1rem",
+          padding: "0.5rem 1rem",
+          backgroundColor: "transparent", // transparent
+          color: "transparent", // texte invisible
+          border: "none",
+          cursor: "default",
+        }}
+      >
+        V
       </button>
       <p
         style={{
