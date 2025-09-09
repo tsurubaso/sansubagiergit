@@ -2,11 +2,12 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
-    const { message } = await req.json();
+    const { content = "" } = await req.json();
+    const text = content.trim();
 
-    if (!message) {
+    if (!text) {
       return NextResponse.json(
-        { success: false, error: "Message is required" },
+        { success: false, error: "Content is required" },
         { status: 400 }
       );
     }
@@ -15,21 +16,13 @@ export async function POST(req) {
     const token = process.env.THREADS_ACCESS_TOKEN;
     const userId = process.env.THREADS_USER_ID || "me"; // "me" fonctionne si le token correspond à ton compte
 
-    const url = `https://graph.threads.net/v1.0/${userId}/threads`;
+    const url = new URL(`https://graph.threads.net/v1.0/${userId}/threads`);
+    url.searchParams.set("media_type", "TEXT"); // ✅ string!
+    url.searchParams.set("text", text);
+    url.searchParams.set("access_token", token);
+    url.searchParams.set("auto_publish_text", "true"); // optional: publish in one call
 
-    const payload = {
-      text: message,
-      access_token: token,
-    };
-
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
+    const res = await fetch(url.toString(), { method: "POST" });
     const data = await res.json();
 
     if (!res.ok) {

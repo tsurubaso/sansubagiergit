@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 
 export default function MarkdownEditor() {
   const [content, setContent] = useState("");
-const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("");
   useEffect(() => {
     // texte par défaut
-   setContent(`
+    setContent(`
 #La géante
 
 Du temps que la Nature en sa verve puissante
@@ -28,13 +28,13 @@ Dormir nonchalamment à l'ombre de ses seins,
 Comme un hameau paisible au pied d'une montagne.
 
 Charles Baudelaire`);
-}, []);
+  }, []);
 
   const sendMail = async () => {
     const res = await fetch("/api/sendMail", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({ message: content }),
     });
 
     if (res.ok) alert("Mail envoyé ✅");
@@ -43,6 +43,35 @@ Charles Baudelaire`);
       alert("Erreur ❌ : " + (data.error || "inconnue"));
     }
   };
+
+  const handlePostThreats = async () => {
+    setStatus("⏳ Posting...");
+
+    try {
+      const res = await fetch("/api/threads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content }),
+      });
+
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        setStatus("Post successful!");
+      } else {
+        setStatus(" Error: " + (result.error || "Unknown error"));
+      }
+    } catch (err) {
+      setStatus(" Network error: " + err.message);
+    }
+  };
+
+  // Efface le status après 60 secondes
+  useEffect(() => {
+    if (!status) return; // rien à faire si vide
+    const timer = setTimeout(() => setStatus(null), 60_000); // 1 min
+    return () => clearTimeout(timer); // cleanup si status change avant la fin
+  }, [status]);
 
   return (
     <div style={{ padding: "1rem" }}>
@@ -57,7 +86,7 @@ Charles Baudelaire`);
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />
-      
+
       <button
         onClick={sendMail}
         style={{
@@ -69,9 +98,33 @@ Charles Baudelaire`);
           cursor: "default",
         }}
       >
-        .
+        M
       </button>
-      
+      <button
+        onClick={handlePostThreats}
+        style={{
+          marginTop: "1rem",
+          padding: "0.5rem 1rem",
+          backgroundColor: "transparent", // transparent
+          color: "transparent", // texte invisible
+          border: "none",
+          cursor: "default",
+        }}
+      >
+        T
+      </button>
+      <p
+        style={{
+          marginTop: "1rem",
+          padding: "0.5rem 1rem",
+          backgroundColor: "transparent", // invisible
+          color: "transparent", // text hidden
+          border: "none",
+          cursor: "default",
+        }}
+      >
+        {status}
+      </p>
     </div>
   );
 }
