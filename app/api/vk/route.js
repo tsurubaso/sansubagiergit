@@ -1,3 +1,7 @@
+//VOWNER_ID
+//VACCESS_TOKEN
+
+
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -10,8 +14,8 @@ export async function POST(req) {
       );
     }
 
-  const ACCESS_TOKEN = process.env.VK_CODE;
-  const OWNER_ID = "2"; // without the "-" sign
+  const ACCESS_TOKEN = process.env.VACCESS_TOKEN;
+  const OWNER_ID = process.env.VOWNER_ID; // without the "-" sign
   
   const API_VERSION = "5.199";
 
