@@ -36,9 +36,32 @@ export async function POST(req) {
 
     const data = await res.json();
 
-    return NextResponse.json(data);
+    if (data.error) {
+      // VK API returned an error
+      return NextResponse.json(
+        { success: false, error: data.error },
+        { status: 400 }
+      );
+    }
+
+    if (data.response) {
+      // VK API call was successful
+      return NextResponse.json(
+        { success: true, response: data.response },
+        { status: 200 }
+      );
+    }
+
+    // Unexpected format
+    return NextResponse.json(
+      { success: false, error: "Unexpected VK API response format" },
+      { status: 500 }
+    );
   } catch (err) {
     console.error("Error:", err);
-    return NextResponse.json({ error: "VK API request failed" }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: "VK API request failed" },
+      { status: 500 }
+    );
   }
 }
