@@ -91,7 +91,7 @@ Charles Baudelaire`);
   // Efface le status après 60 secondes
   useEffect(() => {
     if (!status) return; // rien à faire si vide
-    const timer = setTimeout(() => setStatus(null), 60_000); // 1 min
+    const timer = setTimeout(() => setStatus(null), 30_000); // 1 min
     return () => clearTimeout(timer); // cleanup si status change avant la fin
   }, [status]);
 
