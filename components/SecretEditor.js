@@ -6,12 +6,11 @@ export default function SecretEditor({ link, secret }) {
 
   // Vérifie le secret
   if (secret !== SECRET_KEY) {
-    return <p style={{ padding: "2rem", color: "red" }}>Unauthorized ❌</p>;
+    return <p style={{ padding: "2rem", color: "red" }}>Unauthorized </p>;
   }
 
   const [content, setContent] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [status, setStatus] = useState("");
 
   // Charge le Markdown depuis public/books
   useEffect(() => {
@@ -24,9 +23,7 @@ export default function SecretEditor({ link, secret }) {
         // garde le front matter pour pouvoir modifier les tags
         setContent(text);
       } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
+        setStatus(err.message);
       }
     };
 
@@ -42,18 +39,22 @@ export default function SecretEditor({ link, secret }) {
         body: JSON.stringify({ content }),
       });
 
-      if (res.ok) alert("Mail sent ✅");
+      if (res.ok) setStatus("Mail sent ");
       else {
         const data = await res.json();
-        alert("Error ❌: " + (data.error || "unknown"));
+        setStatus("Error : " + (data.error || "unknown"));
       }
     } catch (err) {
-      alert("Error ❌: " + err.message);
+      setStatus("Error : " + err.message);
     }
   };
 
-  if (loading) return <p style={{ padding: "2rem" }}>Loading…</p>;
-  if (error) return <p style={{ padding: "2rem", color: "red" }}>{error}</p>;
+    // Efface le status après 30 secondes
+  useEffect(() => {
+    if (!status) return; // rien à faire si vide
+    const timer = setTimeout(() => setStatus(null), 30_000); // 30s
+    return () => clearTimeout(timer); // cleanup si status change avant la fin
+  }, [status]);
 
   return (
     <div style={{ padding: "1rem" }}>
@@ -86,6 +87,18 @@ export default function SecretEditor({ link, secret }) {
       >
         .
       </button>
+        <p
+        style={{
+          marginTop: "1rem",
+          padding: "0.5rem 1rem",
+          backgroundColor: "transparent", // invisible
+          color: "transparent", // text hidden
+          border: "none",
+          cursor: "default",
+        }}
+      >
+        {status}
+      </p>
     </div>
   );
 }
