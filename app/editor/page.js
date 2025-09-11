@@ -31,16 +31,18 @@ Charles Baudelaire`);
   }, []);
 
   const sendMail = async () => {
+    setStatus("⏳ Posting...");
+
     const res = await fetch("/api/sendMail", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: content }),
     });
 
-    if (res.ok) alert("Mail envoyé ✅");
+    if (res.ok) setStatus("Mail envoyé");
     else {
       const data = await res.json();
-      alert("Erreur ❌ : " + (data.error || "inconnue"));
+      setStatus("Erreur : " + (data.error || "inconnue"));
     }
   };
 
