@@ -36,7 +36,7 @@ Charles Baudelaire`);
     const res = await fetch("/api/sendMail", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: content }),
+      body: JSON.stringify({ content }),
     });
 
     if (res.ok) setStatus("Mail envoyé");
