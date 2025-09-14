@@ -69,7 +69,7 @@ export default function Sidebar() {
               />
               <button
                 onClick={searchWord}
-                className="mt-2 p-2 bg-blue-500 text-white rounded w-full hover:bg-blue-600"
+                className="mt-2 p-2 bg-violet-400 text-white rounded w-full hover:bg-violet-600"
               >
                 Rechercher
               </button>
