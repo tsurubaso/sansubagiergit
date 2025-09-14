@@ -49,8 +49,8 @@ export default function MarkdownLoader({ link, editable = false, onChange }) {
 
   return (
     <div className="flex min-h-screen bg-[#1e1e1e] text-gray-100">
-      {/* Side Navigation */}
-      <SideNav />
+      
+      
 
       {/* Main Content */}
       <main className="flex-1 p-2 bg-[#2a2a2a]">

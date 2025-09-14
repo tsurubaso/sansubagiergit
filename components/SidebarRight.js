@@ -9,11 +9,11 @@ export default function Sidebar() {
 
   const searchWord = async () => {
     if (!word.trim()) return;
-       try {
-    const res = await fetch(`/api/dictionary?word=${word}`);
-    const data = await res.json();
-    setResult(data);
-     }    catch (err) {
+    try {
+      const res = await fetch(`/api/dictionary?word=${word}`);
+      const data = await res.json();
+      setResult(data);
+    } catch (err) {
       console.error("Error fetching dictionary:", err);
       setResult(null);
     }
@@ -53,12 +53,12 @@ export default function Sidebar() {
               </button>
             </div>
 
-             {/* Titre */}
+            {/* Titre */}
             <div className="mb-4">
               <h2 className="text-xl font-bold">📖 Dictionnaire</h2>
             </div>
 
-                      {/* Formulaire de recherche */}
+            {/* Formulaire de recherche */}
             <div className="p-2 w-full">
               <input
                 type="text"
@@ -81,14 +81,43 @@ export default function Sidebar() {
                 <>
                   {Array.isArray(result) ? (
                     result.map((entry, idx) => (
-                      <div key={idx} className="mb-4">
-                        <h3 className="font-bold text-lg">{entry.word}</h3>
-                        {entry.meanings.map((m, i) => (
-                          <p key={i} className="text-sm">
-                            <span className="italic">{m.partOfSpeech}</span>:{" "}
-                            {m.definitions[0].definition}
-                          </p>
-                        ))}
+                      <div
+                        key={idx}
+                        className="mb-4 border-b border-gray-700 pb-2"
+                      >
+                        {/* Mot */}
+                        <h3 className="font-bold text-lg">{entry.mot}</h3>
+
+                        {/* Nature grammaticale */}
+                        {entry.nature && (
+                          <p className="italic text-gray-300">{entry.nature}</p>
+                        )}
+
+                        {/* Définition */}
+                        <p className="text-sm mt-1">{entry.definition}</p>
+
+                        {/* Attribution / Source */}
+                        <div className="mt-1 text-xs text-gray-400">
+                          <span>Source: </span>
+                          <a
+                            href={entry.attributionUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline hover:text-blue-400"
+                          >
+                            {entry.source}
+                          </a>
+                        </div>
+
+                        {/* Lien Dicolink */}
+                        <a
+                          href={entry.dicolinkUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-blue-400 underline hover:text-blue-300"
+                        >
+                          Voir plus
+                        </a>
                       </div>
                     ))
                   ) : (
