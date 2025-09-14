@@ -1,0 +1,7 @@
+	(async () => {
+		const response = await fetch(
+			`https://api.dicolink.com/v1/mot/${data}/definitions?limite=200&api_key=${codes.myApiKey}`
+		)
+			.then((response) => response.json())
+			.then((text) => event.sender.send('data1', text));
+	})();

@@ -1,5 +1,6 @@
 // layout.js (côté serveur)
 import "./globals.css";
+import SidebarRight from "@/components/SidebarRight";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import ThemeToggle from "@/components/ThemeToggle"; // composant client
@@ -14,10 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body className="flex min-h-screen">
         {/* Sidebar */}
-        <Sidebar />
+        <Sidebar /><SidebarRight/>
         {/* Contenu principal avec footer */}
-        <div className="flex flex-col flex-1 min-h-screen ml-64">
-          <main className="flex-1 p-8">{children}</main>
+        <div className="flex flex-col flex-1 min-h-screen ml-64 mr-64">
+          <main className="flex-1 p-2">{children}</main>
           <Footer />
         </div>
 
