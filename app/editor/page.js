@@ -68,7 +68,7 @@ Charles Baudelaire`);
     }
   };
 
-    const handlePostVK = async () => {
+  const handlePostVK = async () => {
     setStatus("⏳ Posting...");
 
     try {
@@ -100,6 +100,7 @@ Charles Baudelaire`);
   return (
     <div style={{ padding: "1rem" }}>
       <textarea
+        spellCheck={false}
         style={{
           width: "100%",
           height: "800px",

@@ -22,7 +22,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setIsDark(!isDark)}
-      className="fixed bottom-4 right-20 z-50 px-3 py-1 rounded bg-gray-700 text-white hover:bg-gray-600"
+      className="fixed bottom-4 left-20 z-50 px-3 py-1 rounded bg-gray-700 text-white hover:bg-gray-600"
     >
       {isDark ? "☀️ Light" : "🌙 Dark"}
     </button>

@@ -60,9 +60,9 @@ export default function SecretEditor({ link, secret }) {
     <div style={{ padding: "1rem" }}>
       <h1>Editing: {link}</h1>
       <textarea
-        //lang="fr"
-        //spellCheck={true}
-        spellCheck={false} // désactive la correction orthographique
+        lang="fr"
+        spellCheck={true}
+        //spellCheck={false} // désactive la correction orthographique
         style={{
           width: "100%",
           height: "800px",
