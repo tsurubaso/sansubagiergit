@@ -3,25 +3,35 @@
 import { NextResponse } from "next/server";
 
 export async function GET(req) {
-  try {
+  
     const { searchParams } = new URL(req.url);
     const word = searchParams.get("word");
+    const type = searchParams.get("type"); // synonym | antonym | champlexical
     const frdicokey = process.env.FRDICOKEY;
 
-    if (!word) {
-      return NextResponse.json({ error: "No word provided" }, { status: 400 });
+    if (!word || !type) {
+      return NextResponse.json({ error: "Missing word or type" }, { status: 400 });
     }
+  // Map type to API endpoint
+  const endpointMap = {
+    synonym: "synonymes",
+    antonym: "antonymes",
+    champlexical: "champlexical",
+  };
 
+    if (!endpointMap[type]) {
+    return NextResponse.json({ error: "Invalid type" }, { status: 400 });
+  }
+
+  try {
     const res = await fetch(
-      `https://api.dicolink.com/v1/mot/${encodeURIComponent(
-        word
-      )}/synonymes?limite=200&api_key=${frdicokey}`
+      `https://api.dicolink.com/v1/mot/${encodeURIComponent(word)}/${endpointMap[type]}?limite=200&api_key=${frdicokey}`
     );
 
         if (!res.ok) {
       return NextResponse.json(
         { error: "Erreur Dicolink" },
-        { status: response.status }
+        { status: res.status }
       );
     }
     const data = await res.json();

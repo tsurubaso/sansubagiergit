@@ -5,14 +5,19 @@ export default function DictionarySidebar() {
   const [open, setOpen] = useState(true);
   const [word, setWord] = useState("");
   const [result, setResult] = useState(null);
+  const LABELS_FR = {
+    synonym: "Synonymes",
+    antonym: "Antonymes",
+    champlexical: "Champ lexical",
+  };
 
   const fetchData = async (type) => {
     if (!word) return;
 
     const endpoint =
-      type === "synonym"
-        ? `/api/synonyms?word=${encodeURIComponent(word)}`
-        : `/api/dictionary?word=${encodeURIComponent(word)}`;
+      type === "dictionary"
+        ? `/api/dictionary?word=${encodeURIComponent(word)}`
+        : `/api/synonyms?word=${encodeURIComponent(word)}&type=${type}`;
 
     const res = await fetch(endpoint);
     const data = await res.json();
@@ -64,7 +69,7 @@ export default function DictionarySidebar() {
                 placeholder="Tapez un mot"
                 className="border p-2 w-full text-white bg-gray-800 rounded"
               />
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => fetchData("dictionary")}
                   className="flex-1 bg-violet-400 p-2 rounded hover:bg-violet-600"
@@ -76,6 +81,18 @@ export default function DictionarySidebar() {
                   className="flex-1 bg-red-400 p-2 rounded hover:bg-red-600"
                 >
                   Synonymes
+                </button>
+                <button
+                  onClick={() => fetchData("antonym")}
+                  className="flex-1 bg-green-400 p-2 rounded hover:bg-green-600"
+                >
+                  Antonymes
+                </button>
+                <button
+                  onClick={() => fetchData("champlexical")}
+                  className="flex-1 bg-blue-400 p-2 rounded hover:bg-blue-600"
+                >
+                  Champ lexical
                 </button>
               </div>
             </div>
@@ -105,25 +122,30 @@ export default function DictionarySidebar() {
                 </>
               )}
 
-              {result && result.type === "synonym" && (
+              {result && (
                 <>
-                  {Array.isArray(result.data) ? (
-                    <ul className="list-disc pl-5">
-                      {result.data.map((entry, idx) => (
-                        <li key={idx}>
-                          <a
-                            href={entry.dicolinkUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-blue-300 underline"
-                          >
-                            {entry.mot}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
+                  {Array.isArray(result.data) && result.data.length > 0 ? (
+                    <div>
+                      <h3 className="font-bold mb-2 capitalize">
+                        {LABELS_FR[result.type] || result.type}
+                      </h3>
+                      <ul className="list-disc pl-5">
+                        {result.data.map((entry, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={entry.dicolinkUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-blue-300 underline"
+                            >
+                              {entry.mot}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ) : (
-                    <p>Aucun synonyme trouvé</p>
+                    <p>Aucun {LABELS_FR[result.type] || result.type} trouvé</p>
                   )}
                 </>
               )}
