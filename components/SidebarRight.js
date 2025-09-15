@@ -98,7 +98,7 @@ export default function DictionarySidebar() {
             </div>
 
             {/* Résultats */}
-            <div className="mt-4 overflow-y-auto max-h-[70vh]">
+            <div className="mt-4 overflow-y-auto max-h-[70vh] pb-10">
               {result && result.type === "dictionary" && (
                 <>
                   {Array.isArray(result.data) ? (
@@ -122,7 +122,7 @@ export default function DictionarySidebar() {
                 </>
               )}
 
-              {result && (
+             {result && LABELS_FR[result.type] && (
                 <>
                   {Array.isArray(result.data) && result.data.length > 0 ? (
                     <div>
