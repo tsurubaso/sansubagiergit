@@ -1,22 +1,31 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 export default  async function Welcome() {
 ////////////erase this part!! just testing/////////////
 
-  const res = await fetch("api/grammalecte", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text: "Je vais à la Cinema" }),
-    cache: "no-store", // pour pas mettre en cache
-  });
-  const data = await res.json();
 
-  return (
-    <div>
-      <h1>Résultat au lancement :</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
-  );
+
+
+  const [result, setResult] = useState(null);
+
+  useEffect(() => {
+    async function testGrammalecte() {
+      const res = await fetch("/api/grammalecte", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: "Je vais à la Cinema" }),
+        cache: "no-store",
+      });
+      const data = await res.json();
+      setResult(data);
+    }
+    testGrammalecte();
+  }, []);
+
+
+
 
 //////////////////////////////////////////////////////
   return (
@@ -27,6 +36,14 @@ export default  async function Welcome() {
         color: "var(--foreground)",
       }}
     >
+///////////////////
+
+       <div>
+      <h1>Résultat au lancement :</h1>
+      <pre>{JSON.stringify(result, null, 2)}</pre>
+    </div>
+
+////////////////
       <div
         className="p-8 rounded-lg shadow-md max-w-3xl mx-auto"
         style={{
