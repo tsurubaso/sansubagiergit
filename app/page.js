@@ -1,6 +1,24 @@
 "use client";
 
-export default function Welcome() {
+export default  async function Welcome() {
+////////////erase this part!! just testing/////////////
+
+  const res = await fetch("api/grammalecte", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: "Je vais à la Cinema" }),
+    cache: "no-store", // pour pas mettre en cache
+  });
+  const data = await res.json();
+
+  return (
+    <div>
+      <h1>Résultat au lancement :</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+
+//////////////////////////////////////////////////////
   return (
     <div
       className="min-h-screen p-4"
