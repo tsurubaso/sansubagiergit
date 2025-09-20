@@ -9,15 +9,6 @@ export default function Welcome() {
         color: "var(--foreground)",
       }}
     >
-      <div>
-        {loading && <p>⏳ Vérification en cours...</p>}
-        {result && (
-          <pre className="bg-gray-100 p-2 rounded">
-            {JSON.stringify(result, null, 2)}
-          </pre>
-        )}
-      </div>
-
       <div
         className="p-8 rounded-lg shadow-md max-w-3xl mx-auto"
         style={{

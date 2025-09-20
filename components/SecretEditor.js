@@ -1,5 +1,5 @@
 "use client";
-import SelectionTool from "@/components/SelectionTool";
+import LanguageToolResult from "@/components/LanguageToolResult";
 import { useRef, useState, useEffect } from "react";
 
 export default function SecretEditor({ link, secret }) {
@@ -90,7 +90,7 @@ export default function SecretEditor({ link, secret }) {
     <div style={{ padding: "1rem" }}>
       <h1>Editing: {link}</h1>
       <textarea
-      ref={textareaRef}
+        ref={textareaRef}
         lang="fr"
         spellCheck={true}
         //spellCheck={false} // désactive la correction orthographique
@@ -107,7 +107,7 @@ export default function SecretEditor({ link, secret }) {
         onMouseUp={handleSelection}
         onKeyUp={handleSelection}
       />
-     <div style={{ marginTop: 16 }}>
+      <div style={{ marginTop: 16 }}>
         <button
           onClick={handleLTCorrection}
           disabled={!selectedText || ltResult === "loading"}
@@ -116,15 +116,19 @@ export default function SecretEditor({ link, secret }) {
           Corriger la sélection
         </button>
         {selectedText && (
-          <div className="mt-4 text-white" >
+          <div className="mt-4 text-white">
             <strong>Texte sélectionné :</strong>
             <blockquote>{selectedText}</blockquote>
           </div>
         )}
         {ltResult && ltResult !== "loading" && (
           <div style={{ marginTop: 12 }}>
-            <strong>Résultat LanguageTool :</strong>
-            <pre style={{whiteSpace: "pre-wrap", wordBreak: "break-word"}}>{JSON.stringify(ltResult, null, 2)}</pre>
+            <main className="w-11/12 mx-auto mt-10">
+              <h1 className="text-xl font-bold mb-4">
+                Résultats de correction
+              </h1>
+              <LanguageToolResult response={ltResult} />
+            </main>
           </div>
         )}
         {ltResult === "loading" && <div>Correction en cours...</div>}
