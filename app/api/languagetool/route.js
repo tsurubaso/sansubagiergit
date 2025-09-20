@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+const LT_API_URL = process.env.LANGUAGETOOL_API_URL || "https://api.languagetool.org/v2/check";
+
 export async function POST(req) {
   try {
     console.log("📩 Requête reçue côté serveur");
@@ -15,8 +17,8 @@ export async function POST(req) {
     params.append("text", text);
 
     // Call LanguageTool
-    console.log("🌐 Envoi vers LanguageTool API...");
-    const response = await fetch("https://api.languagetool.org/v2/check", {
+    console.log("🌐 Envoi vers LanguageTool API...", LT_API_URL);
+    const response = await fetch(LT_API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
