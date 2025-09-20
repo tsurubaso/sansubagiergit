@@ -1,3 +1,5 @@
+///docker run -p 8081:8081 --rm --name languagetool-server meyay/languagetool:latest
+
 import { NextResponse } from "next/server";
 
 const LT_API_URL = process.env.LANGUAGETOOL_API_URL || "https://api.languagetool.org/v2/check";

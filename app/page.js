@@ -1,57 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-export default  function Welcome() {
-////////////erase this part!! just testing/////////////
-
-
-
-
-
-
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const fetchData = async (text) => {
-    if (!text) return;
-
-    console.log("📤 [FRONT] Envoi du texte au backend...");
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/languagetool", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text }),
-        cache: "no-store",
-      });
-
-      console.log("⏳ [FRONT] Requête envoyée, en attente de la réponse...");
-
-      const data = await res.json();
-
-      console.log("✅ [FRONT] Réponse reçue du backend:", data);
-
-      setResult(data);
-    } catch (err) {
-      console.error("❌ [FRONT] Erreur lors de l'appel:", err);
-      setResult({ error: err.message });
-    } finally {
-      console.log("🏁 [FRONT] Requête terminée.");
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData("Je vais à la Cinema");
-  }, []);
-
-
-
-
-
-//////////////////////////////////////////////////////
+export default function Welcome() {
   return (
     <div
       className="min-h-screen p-4"
@@ -60,18 +9,15 @@ export default  function Welcome() {
         color: "var(--foreground)",
       }}
     >
-///////////////////
- <div>
-      <h1>Test LanguageTool</h1>
-      {loading && <p>⏳ Vérification en cours...</p>}
-      {result && (
-        <pre className="bg-gray-100 p-2 rounded">
-          {JSON.stringify(result, null, 2)}
-        </pre>
-      )}
-    </div>
+      <div>
+        {loading && <p>⏳ Vérification en cours...</p>}
+        {result && (
+          <pre className="bg-gray-100 p-2 rounded">
+            {JSON.stringify(result, null, 2)}
+          </pre>
+        )}
+      </div>
 
-////////////////
       <div
         className="p-8 rounded-lg shadow-md max-w-3xl mx-auto"
         style={{

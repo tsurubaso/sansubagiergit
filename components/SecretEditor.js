@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import SelectionTool from "@/components/SelectionTool";
+import { useRef, useState, useEffect } from "react";
 
 export default function SecretEditor({ link, secret }) {
   const SECRET_KEY = process.env.NEXT_PUBLIC_EDITOR_SECRET;
@@ -11,6 +12,35 @@ export default function SecretEditor({ link, secret }) {
 
   const [content, setContent] = useState("");
   const [status, setStatus] = useState("");
+
+  const textareaRef = useRef();
+  const [selectedText, setSelectedText] = useState("");
+  const [ltResult, setLtResult] = useState(null);
+
+  //selection pour correcteur
+  function handleSelection() {
+    const ta = textareaRef.current;
+    if (!ta) return;
+    const start = ta.selectionStart;
+    const end = ta.selectionEnd;
+    const text = ta.value.substring(start, end);
+    setSelectedText(text);
+    setLtResult(null);
+  }
+
+  //Envoie de la selected text a l'api
+
+  async function handleLTCorrection() {
+    if (!selectedText) return;
+    setLtResult("loading");
+    const res = await fetch("/api/languagetool", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: selectedText, language: "fr" }),
+    });
+    const data = await res.json();
+    setLtResult(data);
+  }
 
   // Charge le Markdown depuis public/books
   useEffect(() => {
@@ -49,7 +79,7 @@ export default function SecretEditor({ link, secret }) {
     }
   };
 
-    // Efface le status après 30 secondes
+  // Efface le status après 30 secondes
   useEffect(() => {
     if (!status) return; // rien à faire si vide
     const timer = setTimeout(() => setStatus(null), 30_000); // 30s
@@ -60,6 +90,7 @@ export default function SecretEditor({ link, secret }) {
     <div style={{ padding: "1rem" }}>
       <h1>Editing: {link}</h1>
       <textarea
+      ref={textareaRef}
         lang="fr"
         spellCheck={true}
         //spellCheck={false} // désactive la correction orthographique
@@ -73,7 +104,31 @@ export default function SecretEditor({ link, secret }) {
         }}
         value={content}
         onChange={(e) => setContent(e.target.value)}
+        onMouseUp={handleSelection}
+        onKeyUp={handleSelection}
       />
+     <div style={{ marginTop: 16 }}>
+        <button
+          onClick={handleLTCorrection}
+          disabled={!selectedText || ltResult === "loading"}
+          className="flex-1 bg-transparent text-white border border-white p-2 rounded hover:bg-white/10 transition-colors"
+        >
+          Corriger la sélection
+        </button>
+        {selectedText && (
+          <div className="mt-4 text-white" >
+            <strong>Texte sélectionné :</strong>
+            <blockquote>{selectedText}</blockquote>
+          </div>
+        )}
+        {ltResult && ltResult !== "loading" && (
+          <div style={{ marginTop: 12 }}>
+            <strong>Résultat LanguageTool :</strong>
+            <pre style={{whiteSpace: "pre-wrap", wordBreak: "break-word"}}>{JSON.stringify(ltResult, null, 2)}</pre>
+          </div>
+        )}
+        {ltResult === "loading" && <div>Correction en cours...</div>}
+      </div>
       <button
         onClick={sendMail}
         style={{
@@ -87,7 +142,7 @@ export default function SecretEditor({ link, secret }) {
       >
         .
       </button>
-        <p
+      <p
         style={{
           marginTop: "1rem",
           padding: "0.5rem 1rem",
