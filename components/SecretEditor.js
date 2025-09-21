@@ -96,7 +96,7 @@ export default function SecretEditor({ link, secret }) {
         //spellCheck={false} // désactive la correction orthographique
         style={{
           width: "100%",
-          height: "800px",
+          height: "600px",
           //height: "calc(100vh - 200px)", // occupe la page mais ne déborde pas
           fontFamily: "monospace",
           padding: "0.5rem",
