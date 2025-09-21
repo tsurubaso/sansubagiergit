@@ -94,14 +94,8 @@ export default function SecretEditor({ link, secret }) {
         lang="fr"
         spellCheck={true}
         //spellCheck={false} // désactive la correction orthographique
-        style={{
-          width: "100%",
-          height: "600px",
-          //height: "calc(100vh - 200px)", // occupe la page mais ne déborde pas
-          fontFamily: "monospace",
-          padding: "0.5rem",
-          border: "1px solid #ccc",
-        }}
+        
+        className="w-full h-[600px] font-mono p-2 border border-gray-300"
         value={content}
         onChange={(e) => setContent(e.target.value)}
         onMouseUp={handleSelection}

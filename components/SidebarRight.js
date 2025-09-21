@@ -72,25 +72,25 @@ export default function DictionarySidebar() {
               <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => fetchData("dictionary")}
-                  className="flex-1 bg-violet-400 p-2 rounded hover:bg-violet-600"
+                  className="flex-1 bg-gray-800 p-2 rounded hover:bg-violet-600"
                 >
                   Dictionnaire
                 </button>
                 <button
                   onClick={() => fetchData("synonym")}
-                  className="flex-1 bg-red-400 p-2 rounded hover:bg-red-600"
+                  className="flex-1 bg-gray-800 p-2 rounded hover:bg-red-600"
                 >
                   Synonymes
                 </button>
                 <button
                   onClick={() => fetchData("antonym")}
-                  className="flex-1 bg-green-400 p-2 rounded hover:bg-green-600"
+                  className="flex-1 bg-gray-800 p-2 rounded hover:bg-green-600"
                 >
                   Antonymes
                 </button>
                 <button
                   onClick={() => fetchData("champlexical")}
-                  className="flex-1 bg-blue-400 p-2 rounded hover:bg-blue-600"
+                  className="flex-1 bg-gray-800 p-2 rounded hover:bg-blue-600"
                 >
                   Champ lexical
                 </button>
