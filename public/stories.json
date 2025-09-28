@@ -108,6 +108,15 @@
     "filename": "BaseE.md"
   },
   {
+    "id": "BaseE2",
+    "title": "Base E",
+    "description": "ADN, génétique et épigénétique",
+    "type": "SF Futuristique",
+    "status": "fragment",
+    "link": "BaseE2",
+    "filename": "BaseE2.md"
+  },
+  {
     "id": "BaseG",
     "title": "Base G",
     "description": "La vieille dame du jardin des Batignolles",
@@ -457,6 +466,15 @@
     "status": "tech",
     "link": "techexample",
     "filename": "techexample.md"
+  },
+  {
+    "id": "test",
+    "title": "Test de travail",
+    "description": "Travail sur merge/save",
+    "type": "Test",
+    "status": "fragment",
+    "link": "test",
+    "filename": "test.md"
   },
   {
     "id": "TroisTouristesAA",
