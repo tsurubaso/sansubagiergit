@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         {/* Contenu principal avec footer */}
         <div className="flex flex-col flex-1 min-h-screen ml-64 mr-64">
           <main className="flex-1 p-2">{children}</main>
-          <Footer />
+      <Footer />
         </div>
 
         {/* Toggle client pour le thème */}
