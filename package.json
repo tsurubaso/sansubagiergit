@@ -11,7 +11,11 @@
   "dependencies": {
     "dotenv": "^17.2.2",
     "gray-matter": "^4.0.3",
+<<<<<<< HEAD
     "next": "^16.1.1",
+=======
+    "next": "^15.3.6",
+>>>>>>> 2b066c6ff000dedbaa16052503ef5108d2a97d7a
     "nodemailer": "^7.0.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
